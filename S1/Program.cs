@@ -180,10 +180,46 @@ namespace S1
 
             #region Data Setup
 
-            Console.WriteLine(ProductList[0]);
-            Console.WriteLine(CustomerList[0]);
+            //Console.WriteLine(ProductList[0]);
+            //Console.WriteLine(CustomerList[0]);
+
 
             #endregion
+
+            #region Filtration [Restrication] Operators - Where
+            #region  Product out of stock
+            // 1. Fluent Syntax
+
+            //var Result = ProductList.Where(P => P.UnitsInStock == 0);
+
+            //// 2. Query Syntax
+
+            //Result = from Product in ProductList
+            //         where Product.UnitsInStock == 0
+            //         select Product;
+
+
+
+            #endregion
+
+            #region Get Elements In Stock And In Category of Meat/Poultry
+
+            //// Fluent Syntax
+            //var Result = ProductList.Where(P => P.UnitsInStock > 0 && P.Category == "Meat/Poultry");
+
+            //// Query Syntax
+            //Result = from P in Result
+            //         where P.UnitsInStock > 0 && P.Category == "Meat/Poultry"
+            //         select P;
+            #endregion
+
+            // fluent only
+            var Result = ProductList.Where((P, I) => I < 10 && P.UnitsInStock == 0);
+
+
+            #endregion
+            foreach (var Unit in Result)
+                Console.WriteLine(Unit);
 
         }
     }
