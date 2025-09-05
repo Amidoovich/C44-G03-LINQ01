@@ -5,7 +5,54 @@ namespace S1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            #region Implictly Type Local Variable [var , Dynamic]
+
+
+            #region Var
+            ////string Data = "Ahmed";
+
+            //var Data = "Ahmed"; // Implicitly typed
+            //                    // Compiler will detect DataType of variable at compilation time
+            //                    // Based on intial Value
+            //                    //var x = null; // invalid
+
+            //Data = null;
+
+            //Data = "Mostafa";
+
+            ////Data = 10; // invalid 
+            #endregion
+
+
+            #region Dynamic
+
+            //dynamic Data = "Ali";
+            //// CLR will Detect DataType of variable At Runtime
+            //// Based on it is Last Assign Value
+
+            //dynamic X;
+
+            //dynamic Y = null;
+
+            //Data = 10;
+
+            //Data = true;
+
+            //foreach (var i in collection)
+
+
+
+
+            #endregion
+
+            // var x  null;
+            //dynamic x = null;
+            //Console.WriteLine(x);
+
+
+            #endregion
+
+
         }
     }
 }
