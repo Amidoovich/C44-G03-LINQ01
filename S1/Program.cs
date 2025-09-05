@@ -65,6 +65,41 @@ namespace S1
             //long Z = 12346789156;
             //long A = Z.Reverse();
             #endregion
+
+            #region Anonymous Type
+
+            //Employee employee = new Employee() { Id = 10 , Name = "Mona" , Salary = 8000 };
+
+
+            //object Emp01 = new { Id = 10, Name = "Mona", Salary = 8000 };
+
+            //Console.WriteLine(Emp01.Salary);
+            //int x = 5;
+
+            //Console.WriteLine(x.GetType().Name);
+
+            //var Emp03 = new { Id = 10, Name = "Mona", Salary = 8000 };
+            ////Console.WriteLine(Emp03.GetType().Name); //<>f__AnonymousType0`3
+            ////Console.WriteLine(Emp03.Id);
+
+
+            //var Emp04 = new { Id = Emp03.Id, Name = Emp03.Name, Salary = 5000 }; //C# 09
+
+            //var Emp05 = Emp03 with { Salary = 2000 }; //C# 10
+
+            //Console.WriteLine($"Emp 03 = {Emp03.GetType().Name}"); //<>f__AnonymousType0`3
+            //Console.WriteLine($"Emp 04 = {Emp04.GetType().Name}"); //<>f__AnonymousType0`3
+            //Console.WriteLine($"Emp 05 = {Emp05.GetType().Name}"); //<>f__AnonymousType0`3
+
+            //// The Same Anonymous Type as long as :
+            //// 1. same properties Name [Case Senstive]
+            //// 2. same properties Order
+
+            //var Emp06 = new { Name = "Mona", Id = 10 };
+            //Console.WriteLine($"Emp 06 = {Emp06.GetType().Name}");
+            #endregion
+
+
         }
     }
 }
