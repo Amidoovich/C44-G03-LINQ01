@@ -113,7 +113,7 @@ namespace S1
 
             #region LINQ Syntax [fluent syntax - query syntax]
 
-            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 
 
@@ -144,6 +144,35 @@ namespace S1
 
 
 
+
+            #endregion
+
+            #region LINQ Executon Ways
+
+            #region Deferred Execution [Latest Version of Data]
+
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //var OddNumbers = Numbers.Where(Number => Number % 2 != 0);
+
+            //Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+            //foreach (int number in OddNumbers)
+            //    Console.Write($"{number} "); // 1 3 5 7 9 11 13 15
+
+            #endregion
+
+            #region Immediate Execution
+
+
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //var OddNumbers = Numbers.Where(Number => Number % 2 != 0).ToList();
+
+            //Numbers.AddRange(new int[] { 11, 12, 13, 14, 15 });
+            //foreach (int number in OddNumbers)
+            //    Console.Write($"{number} "); // 1 3 5 7 9 
+
+            #endregion
 
             #endregion
 
