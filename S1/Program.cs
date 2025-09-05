@@ -99,6 +99,17 @@ namespace S1
             //Console.WriteLine($"Emp 06 = {Emp06.GetType().Name}");
             #endregion
 
+            #region What Is LINQ
+
+            
+            //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+            //List<int> OddNumbers = Numbers.Where(Number => Number % 2 != 0).ToList();
+
+            //foreach (int number in OddNumbers)
+            //    Console.WriteLine(number);
+
+            #endregion
 
         }
     }
