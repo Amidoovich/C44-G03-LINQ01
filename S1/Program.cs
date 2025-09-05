@@ -52,7 +52,19 @@ namespace S1
 
             #endregion
 
+            #region Extension Methods
 
+            //int X = 12345;
+            ////int Y = IntExtension.Reverse(X);
+
+            //int Y;
+            //Y = X.Reverse();
+
+            //Console.WriteLine(Y);
+
+            //long Z = 12346789156;
+            //long A = Z.Reverse();
+            #endregion
         }
     }
 }
