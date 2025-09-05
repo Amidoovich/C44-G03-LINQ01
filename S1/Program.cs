@@ -101,13 +101,49 @@ namespace S1
 
             #region What Is LINQ
 
-            
+
             //List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             //List<int> OddNumbers = Numbers.Where(Number => Number % 2 != 0).ToList();
 
             //foreach (int number in OddNumbers)
             //    Console.WriteLine(number);
+
+            #endregion
+
+            #region LINQ Syntax [fluent syntax - query syntax]
+
+            List<int> Numbers = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+
+
+            #region Fluent Syntax
+            // 1.1 Call "LINQ Operators" as static method
+            //List<int> OddNumbers = Enumerable.Where(Numbers,Number => Number % 2 != 0).ToList();
+
+            // 1.2 Call "LINQ Operators" as Method Extension [Recommended]
+            //List<int> OddNumbers = Numbers.Where(Number => Number % 2 != 0).ToList();
+            //foreach (int number in OddNumbers)
+            //    Console.WriteLine(number); 
+            #endregion
+
+            #region Query Syntax - like sql server style
+
+            // select *
+            // from Numbers N
+            // where N % 2 == 1
+
+            //var OddNumbers = from N in Numbers
+            //                 where N % 2 == 1
+            //                 select N;
+
+            //foreach(var N in Numbers)
+            //    Console.WriteLine(N);
+            #endregion
+
+
+
+
 
             #endregion
 
