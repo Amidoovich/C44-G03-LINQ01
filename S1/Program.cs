@@ -1,4 +1,6 @@
-﻿
+﻿using static S1.Data.ListGenerator;
+using S1.Data;
+
 namespace S1
 {
     internal class Program
@@ -176,6 +178,15 @@ namespace S1
 
             #endregion
 
+            #region Data Setup
+
+            Console.WriteLine(ProductList[0]);
+            Console.WriteLine(CustomerList[0]);
+
+            #endregion
+
         }
     }
 }
+
+
