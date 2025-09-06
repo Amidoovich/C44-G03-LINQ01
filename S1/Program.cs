@@ -214,12 +214,169 @@ namespace S1
             #endregion
 
             // fluent only
-            var Result = ProductList.Where((P, I) => I < 10 && P.UnitsInStock == 0);
+            // Indexed Where
+            //var Result = ProductList.Where((P, I) => I < 10 && P.UnitsInStock == 0);
+
 
 
             #endregion
-            foreach (var Unit in Result)
-                Console.WriteLine(Unit);
+
+            #region Trasformation [Projection] Operators [Select , Select Many]
+
+            #region Get Product Name
+
+            //// FLuent
+            //var Result = ProductList.Select(P => P.ProductName);
+
+
+            //// Query
+            //Result = from P in ProductList
+            //         select P.ProductName;
+
+            #endregion
+
+            #region Select Customer Name
+
+            //var Result = CustomerList.Select(C => C.CustomerName);
+
+            //Result = from C in CustomerList
+            //         select C.CustomerName;
+
+            #endregion
+
+            #region Select Customer Orders
+
+            //var Result = CustomerList.SelectMany(C => C.Orders);
+
+            //Result = from C in CustomerList
+            //         from O in C.Orders
+            //         select O;
+
+            #endregion
+
+            #region Select Product Id and Product Name
+
+            //var Result = ProductList.Select(P => new { P.ProductID , P.ProductName });
+
+            //Result = from P in ProductList
+            //         select new
+            //         {
+            //             P.ProductID,
+            //             P.ProductName,
+            //         };
+
+            #endregion
+
+            #region Select Product in stock And Apply Discount 10 % on its Price
+
+            //var Result = ProductList.Where(P => P.UnitsInStock > 0).Select(P => new
+            //{
+            //    Id = P.ProductID,
+            //    Name = P.ProductName,
+            //    OldPrice = P.UnitPrice,
+            //    NewPrice =P.UnitPrice - (P.UnitPrice * 0.1M) ,
+            //});
+
+            //Result = from P in ProductList
+            //         where P.UnitsInStock > 0
+            //         select new
+            //         {
+            //             Id = P.ProductID,
+            //             Name = P.ProductName,
+            //             OldPrice = P.UnitPrice,
+            //             NewPrice = P.UnitPrice - (P.UnitPrice * 0.1M)
+            //         };
+
+            #endregion
+
+            // Indexed Select 
+            //var Result = ProductList.Where(P => P.UnitsInStock > 0)
+            //                        .Select((P, I) => new
+            //                        {
+            //                            Index = I,
+            //                            Name = P.ProductName
+            //                        });
+            #endregion
+
+
+            #region Ordering Operators
+
+            #region Get Product Ordered By Price Asc
+
+            //var Result = ProductList.OrderBy(P => P.UnitPrice);
+
+            //Result = from P in ProductList
+            //         orderby P.UnitPrice
+            //         select P;
+
+            #endregion
+
+            #region  Get Product Ordered By Price Desc
+
+            //var Result = ProductList.OrderByDescending(P => P.UnitPrice);
+
+            //Result = from P in ProductList
+            //         orderby P.UnitPrice descending
+            //         select P;
+
+
+            #endregion
+
+            #region  Get Product Ordered By Price Desc
+
+            //var Result = ProductList.OrderBy(P => P.UnitPrice).ThenBy(P => P.UnitsInStock).Reverse();
+
+            #endregion
+
+
+            #region 
+
+            #endregion
+
+            #endregion
+
+            #region Element Operator - Immediate Execution [Valid Only With Fluent Syntax]
+
+
+            List<Product> TestProduct = new List<Product>();
+
+            //var Result = TestProduct.FirstOrDefault(P => P.UnitsInStock == 0);
+            //Result = TestProduct.First(P => P.UnitsInStock == 0);
+
+            //var Result = ProductList.LastOrDefault();
+            //Result = ProductList.LastOrDefault(P => P.UnitsInStock == 0);
+
+
+            //var Result = ProductList.ElementAt(0);
+            //Result = ProductList.ElementAtOrDefault(0);
+
+            //var Result = ProductList.Single(); 
+            //Result = ProductList.SingleOrDefault(); 
+
+            //Console.WriteLine(Result?.ProductName ?? "Not Found");
+
+            
+            // Hypird Syntax => Fluent Syntax + Query Syntax
+            // Hypird Syntax => (Query Syntax).Flurnt Syntax
+            
+            
+            //var Result = (from P in ProductList
+            //             where P.UnitsInStock == 0
+            //             select new
+            //             {
+            //                 P.ProductID,
+            //                 P.ProductName,
+            //                 P.UnitsInStock,
+            //             }).FirstOrDefault();
+
+
+            #endregion
+
+
+
+
+            //foreach (var Unit in Result)
+            //    Console.WriteLine(Unit);
 
         }
     }
