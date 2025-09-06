@@ -338,7 +338,7 @@ namespace S1
             #region Element Operator - Immediate Execution [Valid Only With Fluent Syntax]
 
 
-            List<Product> TestProduct = new List<Product>();
+            //List<Product> TestProduct = new List<Product>();
 
             //var Result = TestProduct.FirstOrDefault(P => P.UnitsInStock == 0);
             //Result = TestProduct.First(P => P.UnitsInStock == 0);
@@ -355,11 +355,11 @@ namespace S1
 
             //Console.WriteLine(Result?.ProductName ?? "Not Found");
 
-            
+
             // Hypird Syntax => Fluent Syntax + Query Syntax
             // Hypird Syntax => (Query Syntax).Flurnt Syntax
-            
-            
+
+
             //var Result = (from P in ProductList
             //             where P.UnitsInStock == 0
             //             select new
@@ -373,10 +373,32 @@ namespace S1
             #endregion
 
 
+            #region Aggregate Operators - Immediate Execution 
+
+            //var MaxLength = ProductList.Max(P => P.UnitPrice);
+
+            //var Result = (from P in ProductList
+            //             where P.ProductName.Length == MaxLength
+            //             select P).FirstOrDefault();
+
+            //Console.WriteLine(MaxLength);
+
+            //var Result = ProductList.Average(P => P.UnitPrice);
+            //Console.WriteLine(Result);
+
+            //string[] Names = { "Aya", "Omar", "Amr", "Mohamed" };
+
+            //var Result = Names.Aggregate((str01, str02) => $"{str01} {str02}");
 
 
-            //foreach (var Unit in Result)
-            //    Console.WriteLine(Unit);
+            //var Result = ProductList.Count(P => P.UnitsInStock == 0);
+
+            //Console.WriteLine(Result);
+
+
+            #endregion
+
+
 
         }
     }
